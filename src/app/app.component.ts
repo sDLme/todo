@@ -8,9 +8,9 @@ import { ToDoService } from './services/to-do.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'to-do';
 
   public todoList: ITodo[];
+
   constructor(private _todoService: ToDoService) {
   }
 
