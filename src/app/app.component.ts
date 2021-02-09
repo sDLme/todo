@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ITodo } from './models/todo.interface';
 import { ToDoService } from './services/to-do.service';
 
 @Component({
@@ -8,13 +9,18 @@ import { ToDoService } from './services/to-do.service';
 })
 export class AppComponent implements OnInit {
   title = 'to-do';
-  constructor(private _todoService: ToDoService) {
 
+  public todoList: ITodo[];
+  constructor(private _todoService: ToDoService) {
   }
 
   ngOnInit() {
     this._todoService.loadData().subscribe((todos) => {
-      
+      this.todoList = todos
     })
+  }
+
+  toggleTask(task) {
+      task.completed = !task.completed
   }
 }

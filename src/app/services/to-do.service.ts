@@ -13,8 +13,10 @@ export class ToDoService {
   loadData() {
     return this.httpService.get<Array<ITodo>>(environment.url).pipe(
       map((todos) => {
-        return todos;
+        return todos.sort(() => Math.random() - Math.random()).slice(0, 10);
       })
     );
   }
+
+
 }
