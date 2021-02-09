@@ -1,32 +1,20 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { HttpErrorResponse } from '@angular/common/http';
-import { environment } from 'src/environments/environment';
+import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
-
-
-
-
+import { environment } from 'src/environments/environment';
+import { ITodo } from '../models/todo.interface';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ToDoService {
-
-  toDo;
-
-  constructor(
-    private httpService: HttpClient
-  ){}
+  constructor(private httpService: HttpClient) {}
 
   loadData() {
-    this.httpService.get<any>(environment.url).subscribe( respons => {
-      this.toDo = respons;
-
-    })
+    return this.httpService.get<Array<ITodo>>(environment.url).pipe(
+      map((todos) => {
+        return todos;
+      })
+    );
   }
-
-
-
-
 }
