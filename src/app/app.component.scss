@@ -35,32 +35,27 @@
     width: 90vw;
     height: 90vw;
   }
+}
 
-  &_title,
-  &_btn {
-    font-size: 2vw;
-  }
+.title,
+.btn  {
+  font-size: 2vw;
+}
 
-  &_title {
-    padding: 0 20px;
-  }
+.title {
+  padding: 0 20px;
+}
 
-  &_btn {
-    padding: 0.5em;
-    border: none;
-    outline: none;
-    border-radius: 50px;
-    background:linear-gradient(90deg, #ff9E31 0, #fe6d1a 100%);
-    color: #EFEFEA;
-    cursor: pointer;
-  }
+.btn {
+  padding: 0.5em;
+  border: none;
+  outline: none;
+  border-radius: 50px;
+  background:linear-gradient(90deg, #ff9E31 0, #fe6d1a 100%);
+  color: #EFEFEA;
+  cursor: pointer;
 }
 
 .completed {
   background: linear-gradient(90deg, #54c431 0, #1c5c08 100%);
 }
-
-
-
-
-

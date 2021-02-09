@@ -11,8 +11,7 @@ export class AppComponent implements OnInit {
 
   public todoList: ITodo[];
 
-  constructor(private _todoService: ToDoService) {
-  }
+  constructor(private _todoService: ToDoService) {}
 
   ngOnInit() {
     this._todoService.loadData().subscribe((todos) => {
