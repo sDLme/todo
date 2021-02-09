@@ -1,1 +1,10 @@
-<app-todo></app-todo>
+<div class="content">
+  <div class="to-do" *ngFor="let item of todoList">
+    <div class="head-data">
+      <h2 class="to-do_title">{{item.title}}</h2>
+    </div>
+    <div class="foot-data">
+      <button class="to-do_btn" [class.completed]="item.completed" (click)="toggleTask(item)">{{ item.completed ? 'done' :'in progress' }}</button>
+    </div>
+  </div>
+</div>
